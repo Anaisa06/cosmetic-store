@@ -6,7 +6,7 @@ export function Navbar(pageContent, logic){
     <header>
         <nav>
             <ul class=${styles.navbarList}>
-                <li>Productos</li>
+                <li><a href="http://localhost:9000/dashboard">Productos</a></li>
                 <li>Pedidos</li>
             </ul>
             <button type="button" id="exit-button" class=${styles.exitButton}>Salir</button>
@@ -16,8 +16,6 @@ export function Navbar(pageContent, logic){
     ${pageContent}
     </main>   
     `   
-    
-
     const $exitButton = document.getElementById('exit-button');
     const logOut = () => {
         if (confirm('¿Quieres cerrar tu sesión?')){

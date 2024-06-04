@@ -1,5 +1,7 @@
 h2{
-    margin-top: 12vh;
+    margin-top: 15vh;
+    margin-bottom: 2rem;
+    text-align: center;
 }
 
 .container {
@@ -31,3 +33,4 @@ h2{
     border-radius: 8px;
     cursor: pointer;
 }
+

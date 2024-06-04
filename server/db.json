@@ -4,16 +4,16 @@
       "id": "1",
       "name": "Hydrating Face Cream",
       "description": "A lightweight, non-greasy face cream that provides intense hydration.",
-      "price": 29.99,
-      "stock": 45,
+      "price": "35.99",
+      "stock": "45",
       "category": "Skincare"
     },
     {
       "id": "2",
       "name": "Matte Lipstick",
-      "description": "",
-      "price": "20",
-      "stock": "110",
+      "description": "Long-lasting matte lipstick available in a range of vibrant colors.",
+      "price": 15,
+      "stock": 120,
       "category": "Makeup"
     },
     {
@@ -47,6 +47,14 @@
       "price": 27.5,
       "stock": 40,
       "category": "Skincare"
+    },
+    {
+      "id": "6575",
+      "name": "Lip balm",
+      "description": "Lip balm with strawberry flavor to keep your lips smooth.",
+      "price": "10",
+      "stock": "50",
+      "category": "Makeup"
     }
   ],
   "role": [

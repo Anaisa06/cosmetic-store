@@ -1,4 +1,5 @@
 import { fetchApi } from "../../../helpers/fetchApi";
+import { navigateTo } from '../../Router';
 import styles from './updateProduct.styles.css';
 
 export function UpdateProductScene() {    
@@ -15,7 +16,7 @@ export function UpdateProductScene() {
         </div>
         <div class="form-group">
             <label for="price">Precio del producto</label>
-            <input type="number" id="price" name="price" step="0.01" required>
+            <input type="number" id="price" name="price" step="0.1" required>
         </div>
         <div class="form-group">
             <label for="stock">Stock del producto</label>
@@ -41,7 +42,7 @@ export function UpdateProductScene() {
         const $productName = document.getElementById("productName");
         const $description = document.getElementById("description");
                 
-const $price = document.getElementById("price");
+        const $price = document.getElementById("price");
         const $stock = document.getElementById("stock");
         const $category = document.getElementById("category")
         const productId = localStorage.getItem('product-id');
@@ -70,13 +71,15 @@ const $price = document.getElementById("price");
                 },
                 body: JSON.stringify({
                     name: $productName.value,
-                    description: $newDescription.innerText,
+                    description: $newDescription.value,
                     price: $newPrice.value,
                     stock: $newStock.value,
                     category: $newCategory.value
                 })
             })
-            console.log(updateProduct);
+            alert('Producto actualizado exitosamente')
+            localStorage.removeItem('product-id');
+            navigateTo('/dashboard');            
         } )
        
     }

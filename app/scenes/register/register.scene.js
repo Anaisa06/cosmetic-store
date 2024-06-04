@@ -5,6 +5,7 @@ import { navigateTo } from '../../Router';
 export function RegisterScene (){
     const root = document.getElementById('root');
     root.innerHTML = `
+    <h1>Cosmetic <span>Store</span></h1>
     <form class="${styles.container}">
         <input type="text" name="name" id="name" placeholder="Nombre" required>
         <input type="email" placeholder="usuario@dominio.com" required>

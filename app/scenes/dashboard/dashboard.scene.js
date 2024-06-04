@@ -50,40 +50,49 @@ export function DashboardScene(){
             const createButton = document.createElement('div');
             createButton.innerHTML = `<button type="button" id="createButton" class=${styles.createButton}>Nuevo producto</button>`
             productsContainer.appendChild(createButton);
-        }
 
-        const $createButton = document.getElementById('createButton');
-        $createButton.addEventListener('click', () => {
-            navigateTo('/newProduct');
-        })
-
-        const $deleteButtons = document.querySelectorAll('.deleteButton');
-        const $updateButtons = document.querySelectorAll('.updateButton');
-        const $buyButtons = document.querySelectorAll('.buyButton');
-
-        $deleteButtons.forEach(button => {
-            button.addEventListener('click', async (e) => {
-                const productId = e.target.getAttribute('product-id');
-                if (confirm("¿Deseas eliminar el producto?")) {
-                    try {
-                        await fetchApi(`http://localhost:3000/products/${productId}`, {
-                            method: 'DELETE'
-                        });                        
-                        e.target.closest(`.${styles.productCard}`).remove();
-                    } catch (error) {
-                        console.error('Error al eliminar el producto:', error);
-                    }
-                }
-            });
-        });
-
-        $updateButtons.forEach(button => {
-            button.addEventListener('click', async (e) => {
-                const productId = e.target.getAttribute('product-id');
-                localStorage.setItem('product-id', productId);
-                navigateTo(`/update`)
+            const $createButton = document.getElementById('createButton');
+            $createButton.addEventListener('click', () => {
+                navigateTo('/newProduct');
             })
-        })
+
+            const $deleteButtons = document.querySelectorAll('.deleteButton');
+            const $updateButtons = document.querySelectorAll('.updateButton');
+
+            $deleteButtons.forEach(button => {
+                button.addEventListener('click', async (e) => {
+                    const productId = e.target.getAttribute('product-id');
+                    if (confirm("¿Deseas eliminar el producto?")) {
+                        try {
+                            await fetchApi(`http://localhost:3000/products/${productId}`, {
+                                method: 'DELETE'
+                            });                        
+                            e.target.closest(`.${styles.productCard}`).remove();
+                        } catch (error) {
+                            console.error('Error al eliminar el producto:', error);
+                        }
+                    }
+                });
+            });
+    
+            $updateButtons.forEach(button => {
+                button.addEventListener('click', async (e) => {
+                    const productId = e.target.getAttribute('product-id');
+                    localStorage.setItem('product-id', productId);
+                    navigateTo(`/updateProduct`);
+                })
+            })
+            return;
+        } else {
+            const $buyButtons = document.querySelectorAll('.buyButton');
+            $buyButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    if(confirm('¿Deseas agregar este producto a tu compra?')){
+                        alert('Producto agregado exitosamente');
+                    }
+                })
+            })
+        }
 
     }
     return {

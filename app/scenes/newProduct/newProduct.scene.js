@@ -1,3 +1,6 @@
+import { fetchApi } from "../../../helpers/fetchApi";
+import { navigateTo } from "../../Router";
+
 export function NewProductScene(){ 
     const pageContent = 
     ` <form id="productForm">
@@ -11,7 +14,7 @@ export function NewProductScene(){
         </div>
         <div class="form-group">
             <label for="price">Precio del producto</label>
-            <input type="number" id="price" name="price" step="0.01" required>
+            <input type="number" id="price" name="price" step="0.1" required>
         </div>
         <div class="form-group">
             <label for="stock">Stock del producto</label>
@@ -32,7 +35,35 @@ export function NewProductScene(){
         </div>
     </form>`
     const logic = () => {
-        console.log('desde create');
+        const $form = document.getElementById("productForm");
+        const $productName = document.getElementById("productName");
+        const $description = document.getElementById("description");        
+        const $price = document.getElementById("price");
+        const $stock = document.getElementById("stock");
+        const $category = document.getElementById("category")
+
+        $form.addEventListener('submit', async (event) => {
+            event.preventDefault();
+            if(confirm('¿Desear guardar el producto?')){
+                const saveProduct = await fetchApi('http://localhost:3000/products', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        name: $productName.value,
+                        description: $description.value,
+                        price: $price.value,
+                        stock: $stock.value,
+                        category: $category.value
+                    })
+                })
+                console.log(saveProduct);
+                if(!confirm('Producto creado con éxito. ¿Deseas crear otro producto?')){
+                    navigateTo('/dashboard');
+                }
+            }
+        })
     }
 
     return {

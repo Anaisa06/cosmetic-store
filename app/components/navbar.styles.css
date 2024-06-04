@@ -17,10 +17,19 @@ nav{
     gap: 10px;
 }
 
+.navbarList li {
+    font-size: 1rem;
+    font-weight: 700;
+    color:rgb(44, 99, 81);
+}
+
 .exitButton{
     padding: 0.5rem 1rem;
     border-radius: 8px;
     background-color: white;
     border: none;
     cursor: pointer;
+    color: rgb(44, 99, 81);
+    font-size: 1rem;
+    font-weight: 700;
 }

@@ -5,6 +5,7 @@ import styles from './login.styles.css';
 export function LoginScene(){
     const root = document.getElementById('root');
     root.innerHTML = `
+    <h1>Cosmetic <span>Store</span></h1>
     <form class="${styles.form}">
         <input type="email" placeholder="username@domain.com" required>
         <input type="password" placeholder="password" required>
