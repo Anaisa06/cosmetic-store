@@ -1,0 +1,93 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "Hydrating Face Cream",
+      "description": "A lightweight, non-greasy face cream that provides intense hydration.",
+      "price": 29.99,
+      "stock": 45,
+      "category": "Skincare"
+    },
+    {
+      "id": "2",
+      "name": "Matte Lipstick",
+      "description": "",
+      "price": "20",
+      "stock": "110",
+      "category": "Makeup"
+    },
+    {
+      "id": "3",
+      "name": "Volumizing Mascara",
+      "description": "Mascara that adds volume and length to your lashes without clumping.",
+      "price": 22.5,
+      "stock": 75,
+      "category": "Makeup"
+    },
+    {
+      "id": "4",
+      "name": "Nail Polish Set",
+      "description": "A set of 5 nail polishes in trendy shades with a long-lasting formula.",
+      "price": 35,
+      "stock": 30,
+      "category": "Nail Care"
+    },
+    {
+      "id": "5",
+      "name": "Aloe Vera Gel",
+      "description": "Pure aloe vera gel that soothes and moisturizes skin, ideal for all skin types.",
+      "price": 12.99,
+      "stock": 60,
+      "category": "Skincare"
+    },
+    {
+      "id": "6",
+      "name": "Cleansing Oil",
+      "description": "A gentle cleansing oil that effectively removes makeup and impurities.",
+      "price": 27.5,
+      "stock": 40,
+      "category": "Skincare"
+    }
+  ],
+  "role": [
+    {
+      "id": "1",
+      "name": "Admin"
+    },
+    {
+      "id": "2",
+      "name": "Guest"
+    }
+  ],
+  "users": [
+    {
+      "id": "17b2",
+      "name": "Administrador",
+      "email": "admin@example.com",
+      "password": "U2FsdGVkX1853gsvlTFbH19Cm1TZ1kdij5aP0DHCZpI=",
+      "role_id": 1
+    },
+    {
+      "id": "680b",
+      "name": "Lulú",
+      "email": "lulu@gmail.com",
+      "password": "U2FsdGVkX1/rgJqsAt//xZEdYDXHV+jlC0Jjvk4UB/k=",
+      "role_id": 2
+    },
+    {
+      "id": "0d4a",
+      "name": "Fito",
+      "email": "fito@gmail.com",
+      "password": "U2FsdGVkX19BjdNmRbIqVSFBcPhp7gLi9pXLVdeemMM=",
+      "role_id": 2
+    },
+    {
+      "id": "58c4",
+      "name": "Juan Forerito",
+      "email": "fore@gmail.com",
+      "password": "U2FsdGVkX1+XSMS5qPCSb6vSyDjEA+AWLTMw1DbK/R2xGwgij6NK/2Cb41gLS/+Z",
+      "role_id": 2
+    }
+  ],
+  "orders": []
+}
